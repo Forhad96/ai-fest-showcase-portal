@@ -20,14 +20,14 @@ import BeforeAfter from "../components/BeforeAfter";
 import BrowserMockup from "../components/BrowserMockup";
 import PosterArt from "../components/Posters";
 import FeedbackBoxDemo from "../components/FeedbackBoxDemo";
-import { FeedbackForm, FeedbackWall, RatingSummary, useFeedbackList } from "../components/FeedbackForm";
+// import { FeedbackForm, FeedbackWall, RatingSummary, useFeedbackList } from "../components/FeedbackForm";
 import { FacebookIcon, YoutubeIcon } from "../components/brands";
 import { InstitutionalLockup } from "../components/BrandLogos";
 
 const STAT_ICONS = [Users, Sparkles, Globe, Share2];
 
 export default function Home() {
-  const { entries, setEntries } = useFeedbackList();
+  // const { entries, setEntries } = useFeedbackList();
   const railCreators = [
     ...YT_CREATORS.slice(0, 3).map((c) => ({ ...c, platform: "yt" as const })),
     ...FB_CREATORS.slice(0, 3).map((c) => ({ ...c, platform: "fb" as const })),
@@ -418,7 +418,7 @@ export default function Home() {
       </section>
 
       {/* ============ 6. FEEDBACK CORNER ============ */}
-      <section className="bg-mint">
+      {/* <section className="bg-mint">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
           <SectionHead
             eyebrow="সেকশন ০৬ • ভিজিটর ফিডব্যাক কর্নার"
@@ -444,7 +444,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

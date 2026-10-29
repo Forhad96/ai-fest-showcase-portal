@@ -1,4 +1,5 @@
 import { SITE } from "../content";
+import jubo_unnoyon_logo from "../assets/bangladesh-jubo-unnoyon-seeklogo.png";
 
 export function ETrainingMark({ className = "h-12 w-12" }: { className?: string }) {
   return (
@@ -25,6 +26,12 @@ export function DydMark({ className = "h-12 w-12" }: { className?: string }) {
   );
 }
 
+export const JuboUnnoyonMark = ({className = "h-12 w-12"}: {className?: string}) => {
+  return (
+    <img className={className} src={jubo_unnoyon_logo} alt="যুব উন্নয়ন অধিদপ্তর" />
+  )
+}
+
 export function InstitutionalLockup({ compact = false, inverse = false }: { compact?: boolean; inverse?: boolean }) {
   const primary = inverse ? "text-white" : "text-ink";
   const secondary = inverse ? "text-white/65" : "text-inksoft";
@@ -33,7 +40,8 @@ export function InstitutionalLockup({ compact = false, inverse = false }: { comp
     <div className="flex items-center gap-3">
       <ETrainingMark className={compact ? "h-10 w-10 shrink-0" : "h-14 w-14 shrink-0"} />
       <span className={`h-9 w-px ${inverse ? "bg-white/20" : "bg-ink/15"}`} />
-      <DydMark className={compact ? "h-11 w-9 shrink-0" : "h-14 w-12 shrink-0"} />
+      {/* <DydMark className={compact ? "h-11 w-9 shrink-0" : "h-14 w-12 shrink-0"} /> */}
+      <JuboUnnoyonMark/>
       <span className="leading-tight">
         <span className={`block font-display font-bold ${compact ? "text-base" : "text-lg"} ${primary}`}>
           {SITE.brand.company}

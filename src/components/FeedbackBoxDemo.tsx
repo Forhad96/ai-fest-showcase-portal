@@ -61,15 +61,15 @@ export default function FeedbackBoxDemo() {
             <p className="text-xs text-white/65">নাম লাগবে না, অ্যাকাউন্ট লাগবে না — শুধু সত্যি কথাটা</p>
           </div>
         </div>
-        <span className="rounded-full border border-leaf/40 bg-leaf/10 px-3 py-1.5 text-xs font-bold text-leafsoft">
+        {/* <span className="rounded-full border border-leaf/40 bg-leaf/10 px-3 py-1.5 text-xs font-bold text-leafsoft">
           জমা পড়েছে: {bn(notes.length)}টি
-        </span>
+        </span> */}
       </div>
 
       {/* slot visual */}
       <div className="relative mx-auto mt-6 h-3 w-48 rounded-full bg-night shadow-[inset_0_2px_6px_rgba(0,0,0,0.8)] ring-1 ring-white/10" aria-hidden />
 
-      <div className="relative mt-4">
+      {/* <div className="relative mt-4">
         <textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
@@ -89,7 +89,7 @@ export default function FeedbackBoxDemo() {
           </button>
         </div>
         {err && <p className="mt-2 text-xs font-bold text-flag">{err}</p>}
-      </div>
+      </div> */}
 
       {/* privacy badges */}
       <div className="relative mt-5 grid grid-cols-3 gap-2">

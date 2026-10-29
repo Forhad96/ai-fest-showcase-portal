@@ -15,7 +15,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { FacebookIcon, YoutubeIcon } from "./brands";
-import { DydMark, ETrainingMark, InstitutionalLockup } from "./BrandLogos";
+import { DydMark, ETrainingMark, InstitutionalLockup, JuboUnnoyonMark } from "./BrandLogos";
 import { SITE } from "../content";
 
 const NAV = [
@@ -200,7 +200,8 @@ export default function Layout() {
             </ul>
             <div className="mt-5 flex items-center gap-3 border-t border-white/10 pt-4">
               <ETrainingMark className="h-10 w-10" />
-              <DydMark className="h-11 w-9" />
+              {/* <DydMark className="h-11 w-9" /> */}
+              <JuboUnnoyonMark className="h-10 w-10" />
               <span className="text-xs leading-snug text-white/70">প্রশিক্ষণ ও সরকারি<br />সহযোগী প্রতিষ্ঠান</span>
             </div>
           </div>

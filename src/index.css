@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@theme {
+  --color-night: #041d16;
+  --color-pine: #0a3328;
+  --color-moss: #11503e;
+  --color-leaf: #17b36a;
+  --color-leafsoft: #4ade9b;
+  --color-mint: #eef6f0;
+  --color-paper: #f7fbf8;
+  --color-ink: #0d2b21;
+  --color-inksoft: #43604f;
+  --color-flag: #f42a41;
+  --color-flagdeep: #d11730;
+  --color-gold: #f2b63c;
+  --font-display: "Hind Siliguri", "Noto Sans Bengali", sans-serif;
+  --font-body: "Noto Sans Bengali", "Hind Siliguri", sans-serif;
+  --font-mono: "JetBrains Mono", "Noto Sans Bengali", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-mint);
+  color: var(--color-ink);
+  font-size: 16px;
+  line-height: 1.78;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Bengali glyphs lose clarity with decorative tracking and tight leading. */
+html[lang="bn"] p,
+html[lang="bn"] li,
+html[lang="bn"] label,
+html[lang="bn"] button,
+html[lang="bn"] a {
+  letter-spacing: 0;
+}
+
+html[lang="bn"] .font-display {
+  line-height: 1.32;
+  letter-spacing: 0;
+}
+
+html[lang="bn"] input,
+html[lang="bn"] textarea,
+html[lang="bn"] select {
+  font-family: var(--font-body);
+  line-height: 1.65;
+}
+
+::selection {
+  background: var(--color-flag);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a3328;
+}
+::-webkit-scrollbar-thumb {
+  background: #17b36a;
+  border-radius: 8px;
+  border: 2px solid #0a3328;
+}
+
+/* ---------- ambient layers ---------- */
+.bg-grid-dark {
+  background-image:
+    linear-gradient(rgba(74, 222, 155, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 222, 155, 0.055) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+.bg-grid-light {
+  background-image:
+    linear-gradient(rgba(13, 43, 33, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 43, 33, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.bg-dots {
+  background-image: radial-gradient(rgba(13, 43, 33, 0.14) 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+}
+
+/* ---------- keyframes ---------- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+.marquee-hover:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-floaty { animation: floaty 5s ease-in-out infinite; }
+
+@keyframes kenburns {
+  0% { transform: scale(1) translateY(0); }
+  100% { transform: scale(1.09) translateY(-1.5%); }
+}
+.animate-kenburns { animation: kenburns 22s ease-in-out infinite alternate; }
+
+@keyframes sunpulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.06); }
+}
+.animate-sunpulse { animation: sunpulse 6s ease-in-out infinite; }
+
+@keyframes ringpulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+.animate-ringpulse { animation: ringpulse 1.8s ease-out infinite; }
+
+@keyframes notedrop {
+  0% { transform: translateY(-26px) rotate(-6deg) scale(0.85); opacity: 0; }
+  60% { transform: translateY(6px) rotate(2deg) scale(1.03); opacity: 1; }
+  100% { transform: translateY(0) rotate(0) scale(1); opacity: 1; }
+}
+.animate-notedrop { animation: notedrop 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.2) both; }
+
+@keyframes boxbounce {
+  0%, 100% { transform: translateY(0); }
+  35% { transform: translateY(5px) scaleY(0.96); }
+  70% { transform: translateY(-3px); }
+}
+.animate-boxbounce { animation: boxbounce 0.5s ease-out; }
+
+@keyframes blinkdot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+.animate-blinkdot { animation: blinkdot 1.6s ease-in-out infinite; }
+
+@keyframes drift {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 0.9; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-110vh) translateX(30px); opacity: 0; }
+}
+.particle {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 9999px;
+  background: rgba(74, 222, 155, 0.65);
+  animation: drift linear infinite;
+  pointer-events: none;
+}
+
+/* ---------- reveal on scroll ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- ticket perforation ---------- */
+.ticket-notch {
+  -webkit-mask: radial-gradient(circle 11px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 11px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat;
+  mask: radial-gradient(circle 11px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 11px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee, .animate-floaty, .animate-kenburns, .animate-sunpulse,
+  .animate-ringpulse, .particle, .animate-blinkdot {
+    animation: none !important;
+  }
+  .reveal { transition: none; opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}

@@ -28,7 +28,7 @@ export default function FeedbackBoxPage() {
       >
         <div className="flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-4 py-1.5 text-xs font-bold text-white">
-            <GraduationCap className="h-4 w-4 text-gold" /> তৈরি করেছেন: রাকিব হাসান • শিক্ষার্থী, দ্বিতীয় ব্যাচ
+            <GraduationCap className="h-4 w-4 text-gold" /> তৈরি করেছেন: ফরহাদ হোসেন • শিক্ষার্থী, দ্বিতীয় ব্যাচ
           </span>
           <Chip dark><EyeOff className="h-3.5 w-3.5" /> অ্যানোনিমাস</Chip>
           <Chip dark>সিকিউরড</Chip>

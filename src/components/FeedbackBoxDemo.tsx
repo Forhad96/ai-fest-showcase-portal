@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, Copy, ExternalLink, EyeOff, Inbox, Lock, QrCode, Send, ShieldCheck, StickyNote } from "lucide-react";
+import { Check, Copy, ExternalLink, EyeOff, Inbox, Lock, Play, QrCode, Send, ShieldCheck, StickyNote } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 import { bn, SITE } from "../content";
 
@@ -69,28 +69,8 @@ export default function FeedbackBoxDemo() {
       {/* slot visual */}
       <div className="relative mx-auto mt-6 h-3 w-48 rounded-full bg-night shadow-[inset_0_2px_6px_rgba(0,0,0,0.8)] ring-1 ring-white/10" aria-hidden />
 
-      {/* <div className="relative mt-4">
-        <textarea
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          rows={3}
-          placeholder="যে কথাটা সামনাসামনি বলতে সংকোচ হচ্ছিল, এখানে লিখে ফেলুন…"
-          className="w-full resize-none rounded-xl border border-white/15 bg-night/70 px-4 py-3 text-sm text-white placeholder:text-white/35 outline-none transition focus:border-leafsoft focus:ring-2 focus:ring-leaf/30"
-          aria-label="অ্যানোনিমাস মতামত লিখুন"
-        />
-        <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
-          <p className="text-xs text-white/70">{bn(text.trim().length)} অক্ষর • কিছুই সংরক্ষণ হয় না, ডেমো মোড</p>
-          <button
-            onClick={drop}
-            className="inline-flex items-center gap-2 rounded-lg bg-leaf px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-leaf/30 transition-all hover:bg-leafsoft hover:text-night hover:-translate-y-0.5 active:translate-y-0"
-          >
-            <Send className="h-4 w-4" />
-            বেনামে বাক্সে ফেলুন
-          </button>
-        </div>
-        {err && <p className="mt-2 text-xs font-bold text-flag">{err}</p>}
-      </div> */}
 
+      <FeedbackBoxDemoVideo />
       {/* privacy badges */}
       <div className="relative mt-5 grid grid-cols-3 gap-2">
         {[
@@ -140,11 +120,10 @@ export default function FeedbackBoxDemo() {
             <button
               type="button"
               onClick={copyLiveUrl}
-              className={`inline-flex items-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-bold transition-all ${
-                copied
-                  ? "border-leaf bg-leaf text-white"
-                  : "border-white/20 bg-white/5 text-white hover:border-leafsoft hover:text-leafsoft"
-              }`}
+              className={`inline-flex items-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-bold transition-all ${copied
+                ? "border-leaf bg-leaf text-white"
+                : "border-white/20 bg-white/5 text-white hover:border-leafsoft hover:text-leafsoft"
+                }`}
             >
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
               {copied ? SITE.feedbackBoxLive.copiedLabel : SITE.feedbackBoxLive.copyLabel}
@@ -154,7 +133,7 @@ export default function FeedbackBoxDemo() {
       </div>
 
       {/* collected notes */}
-      <div className="relative mt-6">
+      {/* <div className="relative mt-6">
         <p className="flex items-center gap-2 text-xs font-bold tracking-wide text-white/70">
           <StickyNote className="h-4 w-4 text-gold" /> বাক্সে জমা হওয়া মতামত (সবই বেনামী)
         </p>
@@ -171,7 +150,48 @@ export default function FeedbackBoxDemo() {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </div>
   );
+}
+
+
+const FeedbackBoxDemoVideo = () => {
+  const [playing, setPlaying] = useState(false);
+  const YOUTUBE_ID = "9XoDuJKuFMo";
+  return (<div>
+
+    <div className="relative mt-4 overflow-hidden rounded-xl border border-white/15 bg-night shadow-xl shadow-black/30">
+      {!playing ? (
+        <button
+          type="button"
+          onClick={() => setPlaying(true)}
+          className="group relative block aspect-video w-full"
+          aria-label="ভিডিও চালু করুন"
+        >
+          <img
+            src={`https://img.youtube.com/vi/${YOUTUBE_ID}/hqdefault.jpg`}
+            alt="FeedbackBox ভিডিও থাম্বনেইল"
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          <span className="absolute inset-0 bg-gradient-to-t from-night/80 via-night/10 to-night/30" />
+          <span className="absolute left-1/2 top-1/2 grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-flag shadow-2xl shadow-flag/50 transition-transform group-hover:scale-110">
+            <Play className="ml-1 h-7 w-7 fill-white text-white" />
+          </span>
+        </button>
+      ) : (
+        <div className="aspect-video w-full bg-black">
+          <iframe
+            className="h-full w-full"
+            src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0&playsinline=1`}
+            title="FeedbackBox ভিডিও"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+            allowFullScreen
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
+        </div>
+      )}
+    </div>
+  </div>)
 }

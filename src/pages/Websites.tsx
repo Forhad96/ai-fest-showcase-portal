@@ -74,7 +74,10 @@ export default function WebsitesPage() {
                     className="relative block w-full text-left"
                     aria-label={`${s.title} — বড় প্রিভিউ দেখুন`}
                   >
+                    {s.img && <img src={s?.img} alt={s.title} className="absolute inset-0 h-full w-full object-cover" />
+                    }
                     <BrowserMockup variant={s.variant} url={s.url} className="transition-transform duration-500 group-hover:scale-[1.02]" />
+                    <img src={s.img} alt={s.title} className="absolute inset-0 h-full w-full object-cover" />
                     <span className="absolute inset-0 grid place-items-center rounded-xl bg-night/0 opacity-0 transition-all duration-300 group-hover:bg-night/45 group-hover:opacity-100">
                       <span className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-bold text-ink shadow-xl">
                         <Eye className="h-4 w-4 text-leaf" /> প্রিভিউ দেখুন
@@ -129,7 +132,7 @@ export default function WebsitesPage() {
       {/* modal */}
       {selected && (
         <div
-          className="fixed inset-0 z-[80] grid place-items-center bg-night/80 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-80 grid place-items-center bg-night/80 p-4 backdrop-blur-sm"
           onClick={() => setSelected(null)}
           role="dialog"
           aria-modal="true"

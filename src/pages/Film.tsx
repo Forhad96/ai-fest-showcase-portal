@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Clapperboard, Clock, Film, Mic, Play, Sparkles, Star, Wand2 } from "lucide-react";
+import { ArrowRight, AudioLines, Clapperboard, Clock, Film, Mic, Play, Scissors, Sparkles, Star, Wand2 } from "lucide-react";
 import { FILM, SITE } from "../content";
-import { Chip, PageHero, Reveal, SectionHead } from "../components/ui";
+import { Chip, PageHero, Reveal, SectionHead } from "@/components/ui";
 
-const PIPE_ICONS = [Wand2, Clapperboard, Mic];
+
+const PIPE_ICONS = [Wand2, Clapperboard, Sparkles, AudioLines, Scissors];
 
 export default function FilmPage() {
   const [playing, setPlaying] = useState(false);
@@ -24,61 +25,67 @@ export default function FilmPage() {
       </PageHero>
 
       {/* player */}
-      <section className="relative bg-night pb-20 text-white">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="relative overflow-hidden rounded-2xl border border-white/15 shadow-[0_30px_80px_rgba(0,0,0,0.6)] ring-1 ring-leaf/20">
-              {!playing ? (
-                <button
-                  onClick={() => setPlaying(true)}
-                  className="group relative block w-full text-left"
-                  aria-label="ফিল্ম চালু করুন"
-                >
-                  <div className="aspect-video overflow-hidden">
-                    <img src={FILM.poster} alt="বাংলাদেশ ২০৪০ ফিল্ম পোস্টার" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-night/85 via-night/10 to-night/30" />
-                  <span className="absolute left-5 top-5 flex items-center gap-2 rounded-md bg-flag px-3 py-1.5 font-mono text-xs font-bold tracking-widest">
-                    <Film className="h-3.5 w-3.5" /> OFFICIAL FESTIVAL CUT
-                  </span>
-                  <span className="absolute right-5 top-5 rounded-md bg-night/80 px-3 py-1.5 font-mono text-xs font-bold text-leafsoft backdrop-blur">
-                    {FILM.duration}
-                  </span>
-                  <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <span className="absolute inset-0 rounded-full bg-flag animate-ringpulse" />
-                    <span className="relative grid h-20 w-20 place-items-center rounded-full bg-flag shadow-2xl shadow-flag/60 transition-transform group-hover:scale-110">
-                      <Play className="h-9 w-9 fill-white text-white ml-1" />
-                    </span>
-                  </span>
-                  <div className="absolute bottom-5 left-5 right-5 flex flex-wrap items-end justify-between gap-3">
-                    <div>
-                      <p className="font-display text-2xl sm:text-3xl font-bold">{FILM.title}</p>
-                      <p className="mt-1 text-sm text-white/65">প্লে করতে ক্লিক করুন • সাউন্ড অন করে দেখুন</p>
-                    </div>
-                    <span className="hidden sm:flex items-center gap-1.5 text-xs font-bold text-leafsoft">
-                      <span className="h-2 w-2 rounded-full bg-leaf animate-blinkdot" /> PREMIERE NOW
-                    </span>
-                  </div>
-                </button>
-              ) : (
-                <video
-                  src={FILM.src}
-                  poster={FILM.poster}
-                  controls
-                  autoPlay
-                  playsInline
-                  className="aspect-video w-full bg-black"
-                />
-              )}
+<section className="relative bg-night pb-20 text-white">
+  <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <Reveal>
+      <div className="relative overflow-hidden rounded-2xl border border-white/15 shadow-[0_30px_80px_rgba(0,0,0,0.6)] ring-1 ring-leaf/20">
+        {!playing ? (
+          <button
+            onClick={() => setPlaying(true)}
+            className="group relative block w-full text-left"
+            aria-label="ফিল্ম চালু করুন"
+          >
+            <div className="aspect-video overflow-hidden">
+              <img
+                src={FILM.poster}
+                alt="বাংলাদেশ ২০৪০ ফিল্ম পোস্টার"
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
             </div>
-          </Reveal>
-          <Reveal delay={120}>
-            <p className="mt-4 text-center text-xs text-white/40">
-              অনলাইন প্রিভিউ স্ট্রিম — ফেস্টিভ্যাল প্রদর্শনীতে সম্পূর্ণ ৪ মিনিটের ফাইনাল কাট দেখানো হয়
-            </p>
-          </Reveal>
-        </div>
-      </section>
+            <div className="absolute inset-0 bg-gradient-to-t from-night/85 via-night/10 to-night/30" />
+            <span className="absolute left-5 top-5 flex items-center gap-2 rounded-md bg-flag px-3 py-1.5 font-mono text-xs font-bold tracking-widest">
+              <Film className="h-3.5 w-3.5" /> OFFICIAL FESTIVAL CUT
+            </span>
+            <span className="absolute right-5 top-5 rounded-md bg-night/80 px-3 py-1.5 font-mono text-xs font-bold text-leafsoft backdrop-blur">
+              {FILM.duration}
+            </span>
+            <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+              <span className="absolute inset-0 rounded-full bg-flag animate-ringpulse" />
+              <span className="relative grid h-20 w-20 place-items-center rounded-full bg-flag shadow-2xl shadow-flag/60 transition-transform group-hover:scale-110">
+                <Play className="ml-1 h-9 w-9 fill-white text-white" />
+              </span>
+            </span>
+            <div className="absolute bottom-5 left-5 right-5 flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <p className="font-display text-2xl font-bold sm:text-3xl">{FILM.title}</p>
+                <p className="mt-1 text-sm text-white/65">প্লে করতে ক্লিক করুন • সাউন্ড অন করে দেখুন</p>
+              </div>
+              <span className="hidden items-center gap-1.5 text-xs font-bold text-leafsoft sm:flex">
+                <span className="h-2 w-2 animate-blinkdot rounded-full bg-leaf" /> PREMIERE NOW
+              </span>
+            </div>
+          </button>
+        ) : (
+          <div className="aspect-video w-full bg-black">
+            <iframe
+              className="h-full w-full"
+              src={`https://www.youtube-nocookie.com/embed/${FILM.youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
+              title={FILM.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
+        )}
+      </div>
+    </Reveal>
+    <Reveal delay={120}>
+      <p className="mt-4 text-center text-xs text-white/40">
+        অনলাইন প্রিভিউ স্ট্রিম — ফেস্টিভ্যাল প্রদর্শনীতে সম্পূর্ণ ৪ মিনিটের ফাইনাল কাট দেখানো হয়
+      </p>
+    </Reveal>
+  </div>
+</section>
 
       {/* making of */}
       <section className="bg-paper">

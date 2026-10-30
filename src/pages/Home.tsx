@@ -20,14 +20,14 @@ import BeforeAfter from "../components/BeforeAfter";
 import BrowserMockup from "../components/BrowserMockup";
 import PosterArt from "../components/Posters";
 import FeedbackBoxDemo from "../components/FeedbackBoxDemo";
-// import { FeedbackForm, FeedbackWall, RatingSummary, useFeedbackList } from "../components/FeedbackForm";
+import { FeedbackForm, FeedbackWall, RatingSummary, useFeedbackList } from "../components/FeedbackForm";
 import { FacebookIcon, YoutubeIcon } from "../components/brands";
 import { InstitutionalLockup } from "../components/BrandLogos";
 
 const STAT_ICONS = [Users, Sparkles, Globe, Share2];
 
 export default function Home() {
-  // const { entries, setEntries } = useFeedbackList();
+
   const railCreators = [
     ...YT_CREATORS.slice(0, 3).map((c) => ({ ...c, platform: "yt" as const })),
     ...FB_CREATORS.slice(0, 3).map((c) => ({ ...c, platform: "fb" as const })),
@@ -130,7 +130,7 @@ export default function Home() {
               <Link to="/film" className="group relative block rotate-2 transition-transform duration-500 hover:rotate-0">
                 <div className="relative overflow-hidden rounded-2xl border border-white/15 shadow-2xl shadow-black/60">
                   <div className="aspect-[4/3] overflow-hidden">
-                    <img src={IMG.hero2040} alt="বাংলাদেশ ২০৪০ — এআই ফিল্মের দৃশ্য" className="h-full w-full object-cover animate-kenburns" />
+                    <img src={FILM.poster} alt="বাংলাদেশ ২০৪০ — এআই ফিল্মের দৃশ্য" className="h-full w-full object-cover animate-kenburns" />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-night/90 via-transparent to-night/20" />
                   <span className="absolute left-4 top-4 rounded-md bg-flag px-2.5 py-1 font-mono text-xs font-bold tracking-widest text-white">
@@ -418,7 +418,15 @@ export default function Home() {
       </section>
 
       {/* ============ 6. FEEDBACK CORNER ============ */}
-      {/* <section className="bg-mint">
+      {/* <FeedbackCorner /> */}
+    </>
+  );
+}
+
+export const FeedbackCorner = () => {
+  const { entries, setEntries } = useFeedbackList();
+  return (
+ <section className="bg-mint">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
           <SectionHead
             eyebrow="সেকশন ০৬ • ভিজিটর ফিডব্যাক কর্নার"
@@ -444,7 +452,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section> */}
-    </>
-  );
+      </section> 
+  )
 }

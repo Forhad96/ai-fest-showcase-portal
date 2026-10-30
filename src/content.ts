@@ -143,8 +143,10 @@ export const bn = (n: number | string): string =>
 export const FILM = {
   title: 'বাংলাদেশ ২০৪০: এআই চোখে আমাদের ভবিষ্যৎ',
   duration: '০৪:০০',
-  src: 'https://videos.pexels.com/video-files/28615171/12433554_3840_2160_25fps.mp4',
-  poster: hero2040,
+  // src: 'https://videos.pexels.com/video-files/28615171/12433554_3840_2160_25fps.mp4',
+  src: 'https://youtu.be/pmvJ6RMkzJQ?si=zy3IdOcug2pyKval',
+  youtubeId: 'pmvJ6RMkzJQ',
+  poster: "https://i.postimg.cc/2ykr9ZPw/Bangladesh-2040-AI-era-ca-kha-bhaba-sa-yat.png",
   desc: '৪ মিনিটের সম্পূর্ণ এআই-জেনারেটেড ফিউচারিস্টিক ফিল্ম — প্রম্পট থেকে জন্ম নেওয়া ২০৪০ সালের বাংলাদেশ। স্মার্ট সিটি, স্মার্ট গ্রাম, সবুজ প্রযুক্তি আর মানুষের অদম্য স্বপ্ন — প্রতিটি ফ্রেম, ভয়েসওভার ও আবহসংগীত তৈরি হয়েছে এআই দিয়ে, মাত্র এক মাসের শেখায়।',
   scenes: [
     {
@@ -276,18 +278,21 @@ export type SiteWork = {
   desc: string;
   url: string;
   tech: string[];
-  variant: 'portfolio' | 'restaurant' | 'news' | 'shop' | 'travel' | 'school';
+  variant?
+  : 'portfolio' | 'restaurant' | 'news' | 'shop' | 'travel' | 'school'| 'blog' | 'business'| 'ecommerce';
+  img?:string
 };
 export const SITES: SiteWork[] = [
   {
     id: 'w1',
-    title: 'রাকিব.ডেভ — পার্সোনাল পোর্টফোলিও',
-    student: 'রাকিব হাসান',
-    category: 'পোর্টফোলিও',
-    desc: 'নিজের স্কিল, প্রজেক্ট ও যোগাযোগের তথ্য সাজিয়ে প্রথম হাতে-কোড করা পোর্টফোলিও সাইট।',
-    url: 'https://rakib-dyd.github.io/portfolio',
-    tech: ['HTML', 'CSS', 'AI Copy'],
-    variant: 'portfolio',
+    title: 'আলিমামু.কম — ইকমার্স ওয়েবসাইট',
+    student: 'মোঃ ফরহাদ হোসেন',
+    category: 'বিজনেস',
+    desc: 'বিজনেস ও ইকমার্স ওয়েবসাইট — প্রোডাক্ট ছবি এআই-এনহ্যান্সড।',
+    url: 'https://alimamu.com',
+    tech: ['HTML', 'CSS',"laravel", 'ChatGPT', 'Tailwind', 'Copilot'],
+    variant: 'shop',
+    img:'https://i.postimg.cc/wjRDM8ZC/Alimamu-Responsive-Ecommerce-Showcase.png'
   },
   {
     id: 'w2',

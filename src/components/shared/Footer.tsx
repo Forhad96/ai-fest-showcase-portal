@@ -86,8 +86,8 @@ export const Footer = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/70">
           <p>{SITE.footer.copyright}</p>
           <p className="flex items-center gap-1.5">
-            ভালোবাসা দিয়ে বানিয়েছে দ্বিতীয় ব্যাচ-এর শিক্ষার্থীরা
-            <Heart className="h-3.5 w-3.5 fill-flag text-flag" />
+            ডিজাইন ও ডেভেলপ করেছে <span className="font-semibold text-white">এআই কোর্স • দ্বিতীয় ব্যাচ</span>-এর শিক্ষার্থীরা
+            <Heart className="h-3.5 w-3.5 fill-flag text-flag animate-pulse" />
           </p>
         </div>
       </div>

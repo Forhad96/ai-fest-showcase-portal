@@ -14,24 +14,18 @@ import {
   Users,
   Wand2,
 } from "lucide-react";
-import { bn, FILM, IMG, SITE, STATS, YT_CREATORS, FB_CREATORS } from "../content";
+import { bn, FILM, IMG, PHOTO_WORKS, SITE, SITES, STATS } from "../content";
 import { Chip, Counter, Particles, Reveal, SectionHead, Ticker } from "../components/ui";
 import BeforeAfter from "../components/BeforeAfter";
 import BrowserMockup from "../components/BrowserMockup";
 import PosterArt from "../components/Posters";
 import FeedbackBoxDemo from "../components/FeedbackBoxDemo";
 import { FeedbackForm, FeedbackWall, RatingSummary, useFeedbackList } from "../components/FeedbackForm";
-import { FacebookIcon, YoutubeIcon } from "../components/brands";
 import { InstitutionalLockup } from "../components/BrandLogos";
 
 const STAT_ICONS = [Users, Sparkles, Globe, Share2];
 
 export default function Home() {
-
-  const railCreators = [
-    ...YT_CREATORS.slice(0, 3).map((c) => ({ ...c, platform: "yt" as const })),
-    ...FB_CREATORS.slice(0, 3).map((c) => ({ ...c, platform: "fb" as const })),
-  ];
 
   return (
     <>
@@ -306,64 +300,84 @@ export default function Home() {
       <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
           <SectionHead
-            eyebrow="সেকশন ০৪ • মাল্টি-পেইজ ক্রিয়েশন গ্যালারি"
-            title={<>থাম্বনেইলে ক্লিক, <span className="text-leaf">সাব-পেইজে</span> বিস্ময়</>}
-            desc="ফটো এডিটিং, হাতে-বানানো ওয়েবসাইট আর মার্কেটিং পোস্টার — প্রতিটি ক্যাটাগরির জন্য আলাদা ডেডিকেটেড পেইজ।"
+            eyebrow="সেকশন ০৪ • স্টুডেন্ট ক্রিয়েশন শোকেস"
+            title={<>কার্ডে ক্লিক করুন, <span className="text-leaf">সৃষ্টিশীল জগতে</span> ঘুরে আসুন</>}
+            desc="এআই ফটো আর্টওয়ার্ক এবং শিক্ষার্থীদের হাতে তৈরি লাইভ ওয়েবসাইট প্রজেক্ট — প্রতিটি বিভাগের জন্য সাজানো ডেডিকেটেড গ্যালারি।"
           />
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
-            {/* photos - tall card */}
-            <Reveal className="lg:row-span-2">
-              <Link to="/gallery/photos" className="group flex h-full flex-col overflow-hidden rounded-2xl border border-ink/10 bg-white shadow-lg transition-all hover:shadow-2xl hover:-translate-y-1">
-                <div className="relative p-5 pb-0">
-                  <BeforeAfter src={IMG.portraitMan} alt="এআই ফটো এনহ্যান্সমেন্ট" ratio="aspect-[16/10]" />
+          <div className="mt-10 grid gap-8 md:grid-cols-2">
+            {/* Card 1: Photos */}
+            <Reveal delay={80}>
+              <Link
+                to="/gallery/photos"
+                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-md transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+              >
+                <div className="relative overflow-hidden bg-mint/50 p-6">
+                  <div className="relative mx-auto flex max-w-sm items-center justify-center py-4">
+                    <div className="w-1/2 -rotate-6 overflow-hidden rounded-2xl border-2 border-white shadow-lg transition-transform duration-500 group-hover:-rotate-12 group-hover:scale-105">
+                      <img
+                        src={PHOTO_WORKS[0]?.img || IMG.portraitMan}
+                        alt="এআই ফটো প্রিভিউ ১"
+                        className="aspect-4/5 w-full object-cover"
+                      />
+                    </div>
+                    <div className="relative -ml-8 z-10 w-1/2 rotate-3 overflow-hidden rounded-2xl border-2 border-white shadow-2xl transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                      <img
+                        src={PHOTO_WORKS[1]?.img || IMG.portraitWoman}
+                        alt="এআই ফটো প্রিভিউ ২"
+                        className="aspect-4/5 w-full object-cover"
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="flex flex-1 flex-col p-6">
+
+                <div className="flex flex-1 flex-col p-6 sm:p-8">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-bold text-flag">গ্যালারি ০১</span>
-                    <Chip>{bn(4)}+ কাজ</Chip>
+                    <span className="font-mono text-xs font-bold uppercase tracking-wider text-flag">গ্যালারি ০১</span>
+                    <Chip>{bn(PHOTO_WORKS.length)}+ ছবি</Chip>
                   </div>
-                  <h3 className="mt-2 font-display text-2xl font-bold text-ink group-hover:text-moss transition-colors">এআই ফটো এডিটিং গ্যালারি</h3>
-                  <p className="mt-2 text-sm text-inksoft">সাধারণ ছবি থেকে স্টুডিও কোয়ালিটি — Before & After স্লাইডার টেনে নিজেই দেখুন জাদুটা।</p>
-                  <span className="mt-auto pt-4 inline-flex items-center gap-2 text-sm font-bold text-leaf">
-                    সাব-পেইজে যান <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5" />
+                  <h3 className="mt-3 font-display text-2xl font-bold text-ink transition-colors group-hover:text-moss">
+                    এআই ফটো আর্ট ও পোর্ট্রেট গ্যালারি
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-inksoft">
+                    এআই প্রম্পট ও নিখুঁত রিটাচিংয়ের সমন্বয়ে তৈরি অনন্য সব ডিজিটাল আর্ট, পোর্ট্রেট ও ক্রিয়েটিভ ভিজ্যুয়াল।
+                  </p>
+                  <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-bold text-leaf transition-colors group-hover:text-moss">
+                    গ্যালারি দেখুন <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
                   </span>
                 </div>
               </Link>
             </Reveal>
-            {/* websites */}
-            <Reveal delay={100}>
-              <Link to="/gallery/websites" className="group flex gap-5 overflow-hidden rounded-2xl border border-ink/10 bg-white p-5 shadow-lg transition-all hover:shadow-2xl hover:-translate-y-1 items-center">
-                <div className="w-2/5 shrink-0 transition-transform duration-500 group-hover:scale-[1.04] group-hover:-rotate-1">
-                  <BrowserMockup variant="portfolio" url="https://forhad-one.vercel.app" />
-                </div>
-                <div>
-                  <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs font-bold text-flag">গ্যালারি ০২</span>
-                    <Chip>{bn(12)}টি সাইট</Chip>
+
+            {/* Card 2: Websites */}
+            <Reveal delay={160}>
+              <Link
+                to="/gallery/websites"
+                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-md transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+              >
+                <div className="relative overflow-hidden bg-mint/50 p-6">
+                  <div className="relative mx-auto flex max-w-sm items-center justify-center py-4">
+                    <div className="absolute -left-2 top-4 w-3/5 rotate-[-6deg] opacity-75 shadow-md transition-transform duration-500 group-hover:rotate-[-10deg] group-hover:scale-105">
+                      <BrowserMockup variant="restaurant" url="https://swaddesh-dyd.github.io" />
+                    </div>
+                    <div className="relative ml-auto w-3/4 shadow-xl transition-transform duration-500 group-hover:rotate-2 group-hover:scale-[1.03]">
+                      <BrowserMockup variant="portfolio" url="https://forhad-one.vercel.app" />
+                    </div>
                   </div>
-                  <h3 className="mt-2 font-display text-xl font-bold text-ink group-hover:text-moss transition-colors">ওয়েবসাইট প্রিভিউ গ্যালারি</h3>
-                  <p className="mt-1.5 text-sm text-inksoft hidden sm:block">১ মাসে বানানো লাইভ সাইটগুলোর থাম্বনেইল — ক্লিকেই প্রিভিউ ও লাইভ লিংক।</p>
-                  <span className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-leaf">
-                    সাব-পেইজে যান <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5" />
-                  </span>
                 </div>
-              </Link>
-            </Reveal>
-            {/* posters */}
-            <Reveal delay={200}>
-              <Link to="/gallery/posters" className="group flex gap-5 overflow-hidden rounded-2xl border border-ink/10 bg-white p-5 shadow-lg transition-all hover:shadow-2xl hover:-translate-y-1 items-center">
-                <div className="w-1/3 shrink-0 transition-transform duration-500 group-hover:scale-[1.04] group-hover:rotate-1">
-                  <PosterArt id="poster-premiere" />
-                </div>
-                <div>
-                  <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs font-bold text-flag">গ্যালারি ০৩</span>
-                    <Chip>{bn(5)}+ ডিজাইন</Chip>
+
+                <div className="flex flex-1 flex-col p-6 sm:p-8">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-bold uppercase tracking-wider text-flag">গ্যালারি ০২</span>
+                    <Chip>{bn(SITES.length)}টি সাইট</Chip>
                   </div>
-                  <h3 className="mt-2 font-display text-xl font-bold text-ink group-hover:text-moss transition-colors">মার্কেটিং ও সোশ্যাল পোস্টার</h3>
-                  <p className="mt-1.5 text-sm text-inksoft hidden sm:block">ফেসবুক পোস্টার, ব্যানার আর এআই মার্কেটিং কপির সৃজনশীল সংগ্রহ।</p>
-                  <span className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-leaf">
-                    সাব-পেইজে যান <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5" />
+                  <h3 className="mt-3 font-display text-2xl font-bold text-ink transition-colors group-hover:text-moss">
+                    শিক্ষার্থীদের লাইভ ওয়েবসাইট প্রজেক্ট
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-inksoft">
+                    ১ মাসের নিবিড় প্রশিক্ষণে শিক্ষার্থীদের হাতে-কোড করা রেসপনসিভ ওয়েবসাইট — লাইভ প্রিভিউ ও সরাসরি ভিজিট লিংকসহ।
+                  </p>
+                  <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-bold text-leaf transition-colors group-hover:text-moss">
+                    প্রজেক্টগুলো দেখুন <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
                   </span>
                 </div>
               </Link>
@@ -373,6 +387,7 @@ export default function Home() {
       </section>
 
       {/* ============ 5. CREATORS RAIL ============ */}
+      {/* commented out — creator content not ready yet. Uncomment when YT_CREATORS / FB_CREATORS have real data.
       <section className="relative overflow-hidden bg-night text-white">
         <div className="absolute inset-0 bg-grid-dark" aria-hidden />
         <Particles count={10} />
@@ -416,6 +431,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */}
 
       {/* ============ 6. FEEDBACK CORNER ============ */}
       {/* <FeedbackCorner /> */}
@@ -426,32 +442,32 @@ export default function Home() {
 export const FeedbackCorner = () => {
   const { entries, setEntries } = useFeedbackList();
   return (
- <section className="bg-mint">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-          <SectionHead
-            eyebrow="সেকশন ০৬ • ভিজিটর ফিডব্যাক কর্নার"
-            title={<>আপনার চোখে আমাদের <span className="text-leaf">প্রথম মাস</span></>}
-            desc="বিচারক, মেন্টর কিংবা দর্শনার্থী — আপনার রেটিং ও পরামর্শই পরের মাসের পাথেয়।"
-          />
-          <div className="mt-10 grid gap-8 lg:grid-cols-12 items-start">
-            <Reveal className="lg:col-span-7">
-              <FeedbackForm onSubmitted={setEntries} />
+    <section className="bg-mint">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+        <SectionHead
+          eyebrow="সেকশন ০৬ • ভিজিটর ফিডব্যাক কর্নার"
+          title={<>আপনার চোখে আমাদের <span className="text-leaf">প্রথম মাস</span></>}
+          desc="বিচারক, মেন্টর কিংবা দর্শনার্থী — আপনার রেটিং ও পরামর্শই পরের মাসের পাথেয়।"
+        />
+        <div className="mt-10 grid gap-8 lg:grid-cols-12 items-start">
+          <Reveal className="lg:col-span-7">
+            <FeedbackForm onSubmitted={setEntries} />
+          </Reveal>
+          <div className="lg:col-span-5 space-y-5">
+            <Reveal delay={100}>
+              <RatingSummary entries={entries} />
             </Reveal>
-            <div className="lg:col-span-5 space-y-5">
-              <Reveal delay={100}>
-                <RatingSummary entries={entries} />
-              </Reveal>
-              <Reveal delay={180}>
-                <FeedbackWall entries={entries} limit={2} />
-              </Reveal>
-              <Reveal delay={240}>
-                <Link to="/feedback" className="inline-flex items-center gap-2 text-sm font-bold text-moss hover:text-leaf transition-colors">
-                  সব মতামত দেখুন ({bn(entries.length)}টি) <ChevronRight className="h-4 w-4" />
-                </Link>
-              </Reveal>
-            </div>
+            <Reveal delay={180}>
+              <FeedbackWall entries={entries} limit={2} />
+            </Reveal>
+            <Reveal delay={240}>
+              <Link to="/feedback" className="inline-flex items-center gap-2 text-sm font-bold text-moss hover:text-leaf transition-colors">
+                সব মতামত দেখুন ({bn(entries.length)}টি) <ChevronRight className="h-4 w-4" />
+              </Link>
+            </Reveal>
           </div>
         </div>
-      </section> 
+      </div>
+    </section>
   )
 }

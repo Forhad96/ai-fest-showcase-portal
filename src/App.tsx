@@ -10,6 +10,7 @@ import PosterPage from "./pages/PosterPage";
 import CreatorsPage from "./pages/Creators";
 import FeedbackPage from "./pages/Feedback";
 import StudentsPage from "./pages/StudentsPage";
+import PreviousBatch from "./pages/PreviousBatch";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/film" element={<FilmPage />} />
+          <Route path="/previous-batch" element={<PreviousBatch />} />
           <Route path="/feedbackbox" element={<FeedbackBoxPage />} />
           <Route path="/gallery" element={<GalleryHub />} />
           <Route path="/gallery/photos" element={<PhotosPage />} />

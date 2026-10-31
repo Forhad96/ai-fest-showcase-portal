@@ -16,10 +16,11 @@ import { ETrainingMark } from "../BrandLogos";
 const NAV = [
   { to: "/", label: SITE.navigation.home, icon: Home, end: true },
   { to: "/film", label: SITE.navigation.film, icon: Clapperboard, end: false },
+  { to: "/previous-batch", label: SITE.navigation.previousBatch, icon: Clapperboard, end: false },
   { to: "/feedbackbox", label: SITE.navigation.feedbackBox, icon: Inbox, end: false },
   { to: "/gallery", label: SITE.navigation.gallery, icon: LayoutGrid, end: false },
-  { to: "/creators", label: SITE.navigation.creators, icon: Users, end: false },
-  {  to: "/family" ,label: SITE.navigation.family, icon:User ,end:false}
+  // { to: "/creators", label: SITE.navigation.creators, icon: Users, end: false },
+  { to: "/family", label: SITE.navigation.family, icon: User, end: false }
 ];
 
 function Logo() {

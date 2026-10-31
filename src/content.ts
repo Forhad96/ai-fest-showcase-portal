@@ -275,7 +275,7 @@ export type SiteWork = {
   id: string;
   title: string;
   student: string;
-  category: 'পোর্টফোলিও' | 'বিজনেস' | 'ব্লগ ও নিউজ' | 'শিক্ষা' | "সোশ্যাল / নন-প্রফিট" | 'ই-লার্নিং' | 'এজুকেশন ও গেম' | 'সোশ্যাল / সার্ভিস';
+  category: 'পোর্টফোলিও' | 'বিজনেস' | 'ব্লগ ও নিউজ' | 'শিক্ষা' | "সোশ্যাল / নন-প্রফিট" | 'ই-লার্নিং' | 'এজুকেশন ও গেম' | 'সোশ্যাল / সার্ভিস' | "গেম";
   desc: string;
   url: string;
   tech: string[];
@@ -343,13 +343,15 @@ export const SITES: SiteWork[] = [
   },
   {
     id: 'w6',
-    title: 'ভ্রমণসঙ্গী — ট্যুর গাইড',
-    student: 'ফারিয়া আক্তার',
-    category: 'ব্লগ ও নিউজ',
-    desc: 'বাংলাদেশের দর্শনীয় স্থানের গাইড; প্রতিটি গন্তব্যের বর্ণনা ও ইটিনারারি তৈরি করেছে এআই।',
-    url: 'https://bhromon-dyd.github.io',
+    title: 'Snake Game',
+    student: 'রোকসানা রৌশন',
+    category: 'গেম',
+    desc: 'ছোট বন্ধুদের জন্য মজার খেলার ওয়েবসাইট',
+    url: 'https://english-game-kids-dyd.github.io',
     tech: ['HTML', 'CSS', 'Claude'],
-    variant: 'travel',
+    variant: 'game',
+    img:'https://i.postimg.cc/cLshMcC9/snake-gme.png'
+
 
   },
   {

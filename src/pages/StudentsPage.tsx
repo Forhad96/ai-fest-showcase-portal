@@ -20,8 +20,14 @@ const TEACHERS: Person[] = [
     role: "কো-অর্ডিনেটর",
     img: "https://i.postimg.cc/9fG4bj7x/pha-ija-ra-la-isala-ma-ma-tha.jpg",
   },
-  {
+      {
     id: "t2",
+    name: "খোরশেদুল আলম",
+    role: "অ্যাসিস্ট্যান্ট কো-অর্ডিনেটর",
+    img: "",
+  },
+  {
+    id: "t3",
     name: "মোহাম্মদ ফখরুল ইসলাম",
     role: "আর্টিফিশিয়াল ইন্টেলিজেন্স",
     img: "https://i.postimg.cc/90yQBdKh/ma-ha-ma-mada-phakhara-la-isala-ma.jpg",
@@ -29,30 +35,25 @@ const TEACHERS: Person[] = [
   },
 
   {
-    id: "t3",
+    id: "t4",
     name: "মেহেদী হাসান",
     role: "ডিজিটাল মার্কেটিং অ্যান্ড ফ্রি-ল্যান্সিং",
     img: "https://i.postimg.cc/Cx9DJN6f/ma-ha-da-ha-sa-na.jpg",
   },
   {
-    id: "t4",
+    id: "t5",
     name: "তানভীর হোসাইন",
     role: "সফটওয়্যার অ্যান্ড ওয়েব ডেভেলপার",
     img: "https://i.postimg.cc/sDXhr8kG/ta-nabha-ra-ha-sa-ina.jpg",
   },
 
     {
-    id: "t5",
+    id: "t6",
     name: "শুভ রুদ্র",
     role: "ডিজিটাল মার্কেটিং অ্যান্ড ফ্রি-ল্যান্সিং",
     img: "https://i.postimg.cc/Vv4nRP2D/sa-bha-ra-da-ra.jpg",
   },
-    {
-    id: "t6",
-    name: "খোরশেদুল আলম",
-    role: "অ্যাসিস্ট্যান্ট কো-অর্ডিনেটর",
-    img: "https://i.postimg.cc/Vv4nRP2D/sa-bha-ra-da-ra.jpg",
-  },
+
 ];
 
 // IDs must be unique. Image URLs must be DIRECT links (i.postimg.cc / i.ibb.co ... .jpg/.png)

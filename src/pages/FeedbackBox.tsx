@@ -49,7 +49,7 @@ export default function FeedbackBoxPage() {
                 <p>
                   আমি এই কোর্সের একজন সাধারণ শিক্ষার্থী। প্রথম মাসে প্রম্পট লিখতে গিয়ে একটা জিনিস
                   বুঝলাম — <strong className="text-ink">সঠিক ইনপুট না পেলে এআই যেমন ভুল আউটপুট দেয়,
-                  মানুষও তেমনি সৎ ফিডব্যাক না পেলে নিজের ভুল শুধরাতে পারে না।</strong>
+                    মানুষও তেমনি সৎ ফিডব্যাক না পেলে নিজের ভুল শুধরাতে পারে না।</strong>
                 </p>
                 <p>
                   অথচ আমাদের চারপাশে সত্যি কথা বলা কত কঠিন! বন্ধুর প্রেজেন্টেশনে ভুল থাকলেও বলি না,
@@ -184,7 +184,7 @@ export default function FeedbackBoxPage() {
                 ))}
               </div>
               <div className="mt-7 flex flex-wrap items-center gap-4">
-                <a href="#demo" className="inline-flex items-center gap-2 rounded-lg bg-leaf px-6 py-3 font-display font-bold text-white shadow-lg shadow-leaf/30 transition-all hover:bg-leafsoft hover:text-night hover:-translate-y-0.5">
+                <a href={SITE.feedbackBoxLive.liveUrl} className="inline-flex items-center gap-2 rounded-lg bg-leaf px-6 py-3 font-display font-bold text-white shadow-lg shadow-leaf/30 transition-all hover:bg-leafsoft hover:text-night hover:-translate-y-0.5">
                   লাইভ ডেমো ব্যবহার করুন
                 </a>
                 <Link to="/feedback" className="inline-flex items-center gap-2 text-sm font-bold text-leafsoft hover:text-white transition-colors">

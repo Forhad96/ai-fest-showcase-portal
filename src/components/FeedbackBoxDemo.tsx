@@ -18,9 +18,7 @@ export default function FeedbackBoxDemo() {
   const [err, setErr] = useState("");
   const [copied, setCopied] = useState(false);
 
-  const liveUrl = SITE.feedbackBoxLive.liveUrl.trim() ||
-    (typeof window !== "undefined" ? `${window.location.href.split("#")[0]}#/feedbackbox` : "https://example.com/#/feedbackbox");
-
+  const liveUrl = SITE.feedbackBoxLive.liveUrl.trim() 
   const copyLiveUrl = async () => {
     try {
       await navigator.clipboard.writeText(liveUrl);

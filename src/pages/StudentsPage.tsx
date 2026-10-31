@@ -14,17 +14,17 @@ type Person = {
 // ---------- DATA ----------
 // Add every teacher here. Copy the object block for each new teacher.
 const TEACHERS: Person[] = [
-    {
+  {
     id: "t1",
     name: "ফাইজারুল ইসলাম মিঠু",
     role: "কো-অর্ডিনেটর",
     img: "https://i.postimg.cc/9fG4bj7x/pha-ija-ra-la-isala-ma-ma-tha.jpg",
   },
-      {
+  {
     id: "t2",
     name: "খোরশেদুল আলম",
     role: "অ্যাসিস্ট্যান্ট কো-অর্ডিনেটর",
-    img: "",
+    img: "https://i.postimg.cc/4N3g3jRP/Whats-App-Image-2026-10-31-at-3-04-22-PM.jpg",
   },
   {
     id: "t3",
@@ -36,53 +36,55 @@ const TEACHERS: Person[] = [
 
   {
     id: "t4",
+    name: "তানভীর হোসাইন",
+    role: "সফটওয়্যার অ্যান্ড ওয়েব ডেভেলপার",
+    img: "https://i.postimg.cc/sDXhr8kG/ta-nabha-ra-ha-sa-ina.jpg",
+
+  },
+  {
+    id: "t5",
     name: "মেহেদী হাসান",
     role: "ডিজিটাল মার্কেটিং অ্যান্ড ফ্রি-ল্যান্সিং",
     img: "https://i.postimg.cc/Cx9DJN6f/ma-ha-da-ha-sa-na.jpg",
   },
-  {
-    id: "t5",
-    name: "তানভীর হোসাইন",
-    role: "সফটওয়্যার অ্যান্ড ওয়েব ডেভেলপার",
-    img: "https://i.postimg.cc/sDXhr8kG/ta-nabha-ra-ha-sa-ina.jpg",
-  },
 
-    {
+  {
     id: "t6",
     name: "শুভ রুদ্র",
     role: "ডিজিটাল মার্কেটিং অ্যান্ড ফ্রি-ল্যান্সিং",
-    img: "https://i.postimg.cc/Vv4nRP2D/sa-bha-ra-da-ra.jpg",
+    // img: "https://i.postimg.cc/Vv4nRP2D/sa-bha-ra-da-ra.jpg",
+    img: "https://i.postimg.cc/Y9VsqD6X/Gemini-Generated-Image-cxo316cxo316cxo3.jpg",
   },
 
 ];
 
 // IDs must be unique. Image URLs must be DIRECT links (i.postimg.cc / i.ibb.co ... .jpg/.png)
 export const STUDENTS: Person[] = [
-  { id: "s1", name:"ফরহাদ হোসেন" , img: "https://i.postimg.cc/g0Vtdfv2/Serious-Bearded-Man-Portrait-png-20261025115812.jpg" },
+  { id: "s1", name: "ফরহাদ হোসেন", img: "https://i.postimg.cc/x1MJsXpj/Chat-GPT-Image-Oct-31-2026-03-39-12-PM.png" },
   { id: "s2", name: "সালমা আক্তার", img: "https://i.ibb.co.com/1BdNg1g/Whats-App-Image-2026-10-30-at-5-22-30-PM.jpg" },
   { id: "s3", name: "সিদরাতুল মুনতাহা শোভা", img: "https://i.postimg.cc/gJ8xMbLB/montahaw.jpg" },
   { id: "s4", name: "রোকসানা রৌশন", img: "https://i.postimg.cc/yNsXhWSy/rousan-apu.jpg" },
   { id: "s5", name: "কৌশিক দাশ", img: "https://i.postimg.cc/Ghv7n4GG/kousiik.jpg" },
-  { id: "s6", name: "আজিজুল হক তানভীর", img: "https://i.postimg.cc/fT7Gj22Q/tanvir.jpg"},
-  { id: "s7", name: "ইসরাত জাহান", img: "https://i.postimg.cc/mr7Ct9Z0/israt.jpg"},
-  { id: "s8", name: "মোঃ ইমরানুল হক", img: "https://i.postimg.cc/rmnmmyWk/ma-imara-na-la-haka.jpg"},
-  { id: "s9", name: "তৌহিদুল ইসলাম", img: "https://i.postimg.cc/G90b84mq/tawhid.png"},
-  { id: "s10", name: "তাহসিন ইসলাম রাসেল", img: "https://i.postimg.cc/sxWvNdQr/ta-hasa-na-isala-ma-ra-sa-la.jpg"},
-  { id: "s11", name: "সাইশৈ মার্মা", img: "https://i.postimg.cc/ydcKqVP3/sa-isa-ma-ra-ma.jpg"},
-  { id: "s12", name: "আনোয়ার হোসেন", img: "https://i.postimg.cc/4NBgR26T/Whats-App-Image-2026-10-31-at-10-37-32-AM.jpg"},
-  { id: "s13", name: "সানজিদা সুলতানা প্রিয়া", img: "https://i.postimg.cc/PNGKgjSP/priya.jpg"},
-  { id: "s14", name: "মোহাম্মদ শাহাজাহান", img: "https://i.postimg.cc/L5Jz4bJC/shajahan.jpg"},
-  { id: "s15", name: "মোঃ আবু ছিদ্দীক আকিব", img: "https://i.postimg.cc/QdhJ1Swd/ma-aba-cha-da-da-ka-aka-ba.jpg"},
-  { id: "s16", name: "তরিকুল ইসলাম তরিক", img: "https://i.postimg.cc/sx55ZZJW/tara-ka-la-isala-ma-tara-ka.jpg"},
-  { id: "s17", name: "মুহাম্মদ সাখাওয়াত হোসেন", img: "https://i.postimg.cc/W1N0hzFC/ma-ha-ma-mada-sa-kha-oya-ta-ha-sa-na.jpg"},
-  { id: "s18", name: "মোহাম্মদ জিশান উদ্দিন", img: "https://i.postimg.cc/ydZZwSth/ma-ha-ma-mada-ja-sa-na-uda-da-na.jpg"},
-  { id: "s19", name: "মংহলাপ্রু খেয়াং", img: "https://i.postimg.cc/zXjgZNtk/ma-hala-pa-ra-kha-ya.jpg"},
-  { id: "s20", name: "নিবিড় চাকমা", img: "https://i.postimg.cc/bvHxJnL4/nibir-chak.jpg"},
-  { id: "s21", name: "মোঃ হাসান সোহেল", img: "https://i.postimg.cc/667hV8Qz/hasan.jpg"},
-  { id: "s22", name: "ইসমাইল হোসেন ইমন", img: "https://i.postimg.cc/yxq3yYf2/imon.jpg"},
-  { id: "s23", name: "উম্রাসিং মার্মা", img: "https://i.postimg.cc/3Ny0g0Cd/umayching.jpg"},
-  { id: "s24", name: "ফারজানা ফারুকী", img: "https://i.postimg.cc/tJCQfFms/fanrjana.jpg"},
-  { id: "s25", name: "নাকিবা ফাইরুজ সাদাফ", img: "https://i.postimg.cc/nLzmHWjW/na-ka-ba-pha-ira-ja-sa-da-pha.jpg"},
+  { id: "s6", name: "আজিজুল হক তানভীর", img: "https://i.postimg.cc/fT7Gj22Q/tanvir.jpg" },
+  { id: "s7", name: "ইসরাত জাহান", img: "https://i.postimg.cc/mr7Ct9Z0/israt.jpg" },
+  { id: "s8", name: "মোঃ ইমরানুল হক", img: "https://i.postimg.cc/rmnmmyWk/ma-imara-na-la-haka.jpg" },
+  { id: "s9", name: "তৌহিদুল ইসলাম", img: "https://i.postimg.cc/G90b84mq/tawhid.png" },
+  { id: "s10", name: "তাহসিন ইসলাম রাসেল", img: "https://i.postimg.cc/sxWvNdQr/ta-hasa-na-isala-ma-ra-sa-la.jpg" },
+  { id: "s11", name: "সাইশৈ মার্মা", img: "https://i.postimg.cc/ydcKqVP3/sa-isa-ma-ra-ma.jpg" },
+  { id: "s12", name: "আনোয়ার হোসেন", img: "https://i.postimg.cc/4NBgR26T/Whats-App-Image-2026-10-31-at-10-37-32-AM.jpg" },
+  { id: "s13", name: "সানজিদা সুলতানা প্রিয়া", img: "https://i.postimg.cc/PNGKgjSP/priya.jpg" },
+  { id: "s14", name: "মোহাম্মদ শাহাজাহান", img: "https://i.postimg.cc/L5Jz4bJC/shajahan.jpg" },
+  { id: "s15", name: "মোঃ আবু ছিদ্দীক আকিব", img: "https://i.postimg.cc/QdhJ1Swd/ma-aba-cha-da-da-ka-aka-ba.jpg" },
+  { id: "s16", name: "তরিকুল ইসলাম তরিক", img: "https://i.postimg.cc/sx55ZZJW/tara-ka-la-isala-ma-tara-ka.jpg" },
+  { id: "s17", name: "মুহাম্মদ সাখাওয়াত হোসেন", img: "https://i.postimg.cc/W1N0hzFC/ma-ha-ma-mada-sa-kha-oya-ta-ha-sa-na.jpg" },
+  { id: "s18", name: "মোহাম্মদ জিশান উদ্দিন", img: "https://i.postimg.cc/ydZZwSth/ma-ha-ma-mada-ja-sa-na-uda-da-na.jpg" },
+  { id: "s19", name: "মংহলাপ্রু খেয়াং", img: "https://i.postimg.cc/zXjgZNtk/ma-hala-pa-ra-kha-ya.jpg" },
+  { id: "s20", name: "নিবিড় চাকমা", img: "https://i.postimg.cc/bvHxJnL4/nibir-chak.jpg" },
+  { id: "s21", name: "মোঃ হাসান সোহেল", img: "https://i.postimg.cc/667hV8Qz/hasan.jpg" },
+  { id: "s22", name: "ইসমাইল হোসেন ইমন", img: "https://i.postimg.cc/yxq3yYf2/imon.jpg" },
+  { id: "s23", name: "উম্রাসিং মার্মা", img: "https://i.postimg.cc/3Ny0g0Cd/umayching.jpg" },
+  { id: "s24", name: "ফারজানা ফারুকী", img: "https://i.postimg.cc/tJCQfFms/fanrjana.jpg" },
+  { id: "s25", name: "নাকিবা ফাইরুজ সাদাফ", img: "https://i.postimg.cc/nLzmHWjW/na-ka-ba-pha-ira-ja-sa-da-pha.jpg" },
 
 
 ];

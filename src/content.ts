@@ -39,7 +39,7 @@ export const SITE = {
     gallery: 'ক্রিয়েশন গ্যালারি',
     creators: 'ক্রিয়েটর হাব',
     feedback: 'মতামত দিন',
-    family: 'ক্লাস পরিবার'
+    family: 'ক্লাস পরিবার',
   },
   home: {
     trainingLabel: 'যুব উন্নয়ন অধিদপ্তর • বেসিক এআই ট্রেনিং • বান্দরবান',
@@ -58,7 +58,7 @@ export const SITE = {
   },
   feedbackBoxLive: {
     /* Add a complete deployed URL here later. Empty means this portal's FeedbackBox page. */
-    liveUrl: 'feedbackbox-bd.vercel.app',
+    liveUrl: 'https://feedbackbox-bd.vercel.app',
     qrTitle: 'মোবাইলে FeedbackBox খুলুন',
     qrDescription: 'ক্যামেরা দিয়ে QR কোড স্ক্যান করুন অথবা লাইভ লিংক খুলুন।',
     openLabel: 'লাইভ লিংক খুলুন',
@@ -147,7 +147,7 @@ export const FILM = {
   // src: 'https://videos.pexels.com/video-files/28615171/12433554_3840_2160_25fps.mp4',
   src: 'https://youtu.be/pmvJ6RMkzJQ?si=zy3IdOcug2pyKval',
   youtubeId: 'pmvJ6RMkzJQ',
-  poster: "https://i.postimg.cc/2ykr9ZPw/Bangladesh-2040-AI-era-ca-kha-bhaba-sa-yat.png",
+  poster: 'https://i.postimg.cc/2ykr9ZPw/Bangladesh-2040-AI-era-ca-kha-bhaba-sa-yat.png',
   desc: '৪ মিনিটের সম্পূর্ণ এআই-জেনারেটেড ফিউচারিস্টিক ফিল্ম — প্রম্পট থেকে জন্ম নেওয়া ২০৪০ সালের বাংলাদেশ। স্মার্ট সিটি, স্মার্ট গ্রাম, সবুজ প্রযুক্তি আর মানুষের অদম্য স্বপ্ন — প্রতিটি ফ্রেম, ভয়েসওভার ও আবহসংগীত তৈরি হয়েছে এআই দিয়ে, মাত্র এক মাসের শেখায়।',
   scenes: [
     {
@@ -275,13 +275,33 @@ export type SiteWork = {
   id: string;
   title: string;
   student: string;
-  category: 'পোর্টফোলিও' | 'বিজনেস' | 'ব্লগ ও নিউজ' | 'শিক্ষা' | "সোশ্যাল / নন-প্রফিট" | 'ই-লার্নিং' | 'এজুকেশন ও গেম' | 'সোশ্যাল / সার্ভিস' | "গেম";
+  category:
+    | 'পোর্টফোলিও'
+    | 'বিজনেস'
+    | 'ব্লগ ও নিউজ'
+    | 'শিক্ষা'
+    | 'সোশ্যাল / নন-প্রফিট'
+    | 'ই-লার্নিং'
+    | 'এজুকেশন ও গেম'
+    | 'সোশ্যাল / সার্ভিস'
+    | 'গেম';
   desc: string;
   url: string;
   tech: string[];
-  variant?
-  : 'portfolio' | 'restaurant' | 'news' | 'shop' | 'travel' | 'school' | 'blog' | 'business' | 'ecommerce' | "nonprofit" | "e-learning" | 'game';
-  img?: string
+  variant?:
+    | 'portfolio'
+    | 'restaurant'
+    | 'news'
+    | 'shop'
+    | 'travel'
+    | 'school'
+    | 'blog'
+    | 'business'
+    | 'ecommerce'
+    | 'nonprofit'
+    | 'e-learning'
+    | 'game';
+  img?: string;
 };
 export const SITES: SiteWork[] = [
   {
@@ -291,9 +311,9 @@ export const SITES: SiteWork[] = [
     category: 'বিজনেস',
     desc: 'বিজনেস ও ইকমার্স ওয়েবসাইট — প্রোডাক্ট ছবি এআই-এনহ্যান্সড।',
     url: 'https://alimamu.com',
-    tech: ['HTML', 'CSS', "laravel", 'ChatGPT', 'Tailwind', 'Copilot'],
+    tech: ['HTML', 'CSS', 'laravel', 'ChatGPT', 'Tailwind', 'Copilot'],
     variant: 'shop',
-    img: 'https://i.postimg.cc/wjRDM8ZC/Alimamu-Responsive-Ecommerce-Showcase.png'
+    img: 'https://i.postimg.cc/wjRDM8ZC/Alimamu-Responsive-Ecommerce-Showcase.png',
   },
   {
     id: 'w2',
@@ -304,7 +324,7 @@ export const SITES: SiteWork[] = [
     url: 'https://alordishafoundation.org/',
     tech: ['HTML', 'Tailwind', 'ChatGPT'],
     variant: 'nonprofit',
-    img: 'https://i.postimg.cc/7LFSmVhj/alor-disa.png'
+    img: 'https://i.postimg.cc/7LFSmVhj/alor-disa.png',
   },
 
   {
@@ -316,8 +336,7 @@ export const SITES: SiteWork[] = [
     url: 'https://www.shiko.courses/',
     tech: ['HTML', 'CSS', 'Javascript'],
     variant: 'e-learning',
-    img: 'https://i.postimg.cc/DfMnDMFY/shikho.jpg'
-
+    img: 'https://i.postimg.cc/DfMnDMFY/shikho.jpg',
   },
   {
     id: 'w4',
@@ -328,7 +347,7 @@ export const SITES: SiteWork[] = [
     url: 'https://english-game-kids-dyd.github.io',
     tech: ['HTML', 'CSS', 'JavaScript', 'Gemini'],
     variant: 'game',
-    img: 'https://i.postimg.cc/dQrcHtHp/salma-english-shiki.png'
+    img: 'https://i.postimg.cc/dQrcHtHp/salma-english-shiki.png',
   },
   {
     id: 'w5',
@@ -339,7 +358,7 @@ export const SITES: SiteWork[] = [
     url: 'https://banglacodes.app/p/success-it-park-100-online-based-it-inst-wbawxfng/',
     tech: ['HTML', 'Tailwind', 'ChatGPT'],
     variant: 'e-learning',
-    img: 'https://i.postimg.cc/CMGLZNgR/success-it.jpg'
+    img: 'https://i.postimg.cc/CMGLZNgR/success-it.jpg',
   },
   {
     id: 'w6',
@@ -350,19 +369,17 @@ export const SITES: SiteWork[] = [
     url: 'https://english-game-kids-dyd.github.io',
     tech: ['HTML', 'CSS', 'Claude'],
     variant: 'game',
-    img:'https://i.postimg.cc/cLshMcC9/snake-gme.png'
-
-
+    img: 'https://i.postimg.cc/cLshMcC9/snake-gme.png',
   },
   {
     id: 'w7',
-    title: 'আলোর পাঠশালা',
-    student: 'সাব্বির আহমেদ',
-    category: 'শিক্ষা',
-    desc: 'গ্রামের স্কুলের জন্য নোটিশ, রুটিন ও ফলাফলের সাইট — এক মাসের শেখার সবচেয়ে কাজের প্রজেক্ট।',
-    url: 'https://alorpathshala-dyd.github.io',
-    tech: ['HTML', 'CSS', 'Copilot'],
-    variant: 'school',
+    title: 'বাংলা টাইপিং প্র্যাকটিস',
+    student: 'কৌশিক দাশ',
+    category: 'এজুকেশন ও গেম',
+    desc: 'বাংলা টাইপিং প্র্যাকটিস এর ওয়েবসাইট',
+    url: 'https://kowshikdas1833.github.io/Bangla-Typing-Practice/',
+    tech: ['HTML', 'CSS', 'Javascript', 'Copilot'],
+    variant: 'e-learning',
   },
 ];
 

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Globe, ImagePlay, MousePointerClick } from "lucide-react";
 import { bn, PHOTO_WORKS, SITE, SITES } from "../content";
@@ -10,7 +11,7 @@ const CATS = [
     no: "০১",
     icon: ImagePlay,
     title: "এআই ফটো আর্ট ও পোর্ট্রেট গ্যালারি",
-    desc: "এআই প্রযুক্তিতে তৈরি ও নিখুঁতভাবে এডিট করা সব আকর্ষণীয় ছবির এক্সক্লুসিভ কালেকশন — ক্রিয়েটিভ ফটো ও আর্টওয়ার্ক এক নজরে দেখার জন্য।",
+    desc: "এআই প্রযুক্তিতে তৈরি ও নিখুঁতভাবে এডিট করা সব আকর্ষণীয় ছবির এক্সক্লুসিভ কালেকশন — ক্রিয়েটিভ ফটো ও আর্টওয়ার্ক এক নজরে দেখার জন্য।",
     previewType: "photo",
     count: `${bn(PHOTO_WORKS.length)}টি ছবি`,
     accent: "text-leaf",
@@ -29,8 +30,33 @@ const CATS = [
   },
 ];
 
+// Helper to pick 3 unique random indexes from PHOTO_WORKS
+function getRandomPhotoIndexes(length: number): number[] {
+  if (length <= 3) return Array.from({ length }, (_, idx) => idx);
+  const picked = new Set<number>();
+  while (picked.size < 3) {
+    picked.add(Math.floor(Math.random() * length));
+  }
+  return Array.from(picked);
+}
+
 export default function GalleryHub() {
-  const photoPreviews = PHOTO_WORKS.slice(0, 3);
+  const [photoIndexes, setPhotoIndexes] = useState<number[]>(() =>
+    getRandomPhotoIndexes(PHOTO_WORKS.length)
+  );
+
+  // Rotate preview images every 5 seconds
+  useEffect(() => {
+    if (PHOTO_WORKS.length <= 1) return;
+
+    const timer = setInterval(() => {
+      setPhotoIndexes(getRandomPhotoIndexes(PHOTO_WORKS.length));
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const previewPhotos = photoIndexes.map((idx) => PHOTO_WORKS[idx]).filter(Boolean);
 
   return (
     <>
@@ -63,33 +89,40 @@ export default function GalleryHub() {
                   className="group grid grid-cols-1 gap-8 lg:gap-12 overflow-hidden rounded-3xl border border-ink/10 bg-white p-6 sm:p-10 shadow-md transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 lg:grid-cols-2 lg:items-center"
                 >
                   {/* Visual Preview */}
-                  <div className={`w-full flex justify-center items-center ${isReversed ? "lg:order-2" : "lg:order-1"}`}>
+                  <div
+                    className={`w-full flex justify-center items-center ${
+                      isReversed ? "lg:order-2" : "lg:order-1"
+                    }`}
+                  >
                     {c.previewType === "photo" && (
                       <div className="relative flex w-full max-w-md items-center justify-center py-6">
-                        {photoPreviews[0] && (
+                        {previewPhotos[0] && (
                           <div className="w-1/2 -rotate-6 overflow-hidden rounded-2xl border-2 border-white shadow-lg transition-transform duration-500 group-hover:-rotate-12 group-hover:scale-105">
                             <img
-                              src={photoPreviews[0].after || photoPreviews[0].src || photoPreviews[0]}
-                              alt="ফটো প্রিভিউ ১"
-                              className="aspect-[4/5] w-full object-cover"
+                              key={previewPhotos[0].id}
+                              src={previewPhotos[0].img}
+                              alt={previewPhotos[0].title || "ফটো প্রিভিউ ১"}
+                              className="aspect-4/5 w-full object-cover transition-all duration-700 animate-in fade-in"
                             />
                           </div>
                         )}
-                        {photoPreviews[1] && (
+                        {previewPhotos[1] && (
                           <div className="relative -ml-10 z-10 w-1/2 rotate-3 overflow-hidden rounded-2xl border-2 border-white shadow-2xl transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
                             <img
-                              src={photoPreviews[1].after || photoPreviews[1].src || photoPreviews[1]}
-                              alt="ফটো প্রিভিউ ২"
-                              className="aspect-[4/5] w-full object-cover"
+                              key={previewPhotos[1].id}
+                              src={previewPhotos[1].img}
+                              alt={previewPhotos[1].title || "ফটো প্রিভিউ ২"}
+                              className="aspect-4/5 w-full object-cover transition-all duration-700 animate-in fade-in"
                             />
                           </div>
                         )}
-                        {photoPreviews[2] && (
+                        {previewPhotos[2] && (
                           <div className="relative -ml-10 w-2/5 -rotate-3 overflow-hidden rounded-2xl border-2 border-white shadow-md opacity-85 transition-transform duration-500 group-hover:rotate-12 group-hover:opacity-100">
                             <img
-                              src={photoPreviews[2].after || photoPreviews[2].src || photoPreviews[2]}
-                              alt="ফটো প্রিভিউ ৩"
-                              className="aspect-[4/5] w-full object-cover"
+                              key={previewPhotos[2].id}
+                              src={previewPhotos[2].img}
+                              alt={previewPhotos[2].title || "ফটো প্রিভিউ ৩"}
+                              className="aspect-4/5 w-full object-cover transition-all duration-700 animate-in fade-in"
                             />
                           </div>
                         )}

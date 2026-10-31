@@ -24,7 +24,7 @@ const TEACHERS: Person[] = [
     id: "t2",
     name: "খোরশেদুল আলম",
     role: "অ্যাসিস্ট্যান্ট কো-অর্ডিনেটর",
-    img: "https://i.postimg.cc/4N3g3jRP/Whats-App-Image-2026-10-31-at-3-04-22-PM.jpg",
+    img: "https://i.postimg.cc/ZRK7BpnL/Whats-App-Image-2026-10-31-at-7-27-05-PM.jpg",
   },
   {
     id: "t3",

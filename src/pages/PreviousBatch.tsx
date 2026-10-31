@@ -57,10 +57,10 @@ export default function PreviousBatch() {
               eyebrow={PREVIOUS_BATCH.eyebrow}
               title={
                 <>
-                  {PREVIOUS_BATCH.title}: <span className="text-moss">একটি অনুপ্রেরণার উত্তরাধিকার</span>
+                  প্রথম ব্যাচের গল্প: <span className="text-moss">আমাদের এগিয়ে যাওয়ার প্রেরণা</span>
                 </>
               }
-              desc="দ্বিতীয় ব্যাচের পক্ষ থেকে আমাদের পথপ্রদর্শক অগ্রজ প্রথম ব্যাচের সৃষ্টিশীল কাজের প্রতি অশেষ কৃতজ্ঞতা ও সম্মান।"
+              desc="দ্বিতীয় ব্যাচের পক্ষ থেকে আমাদের সিনিয়র প্রথম ব্যাচের শিক্ষাসফর ও কাজের প্রতি আন্তরিক সম্মান।"
             />
             <Reveal delay={120}>
               <span className="inline-flex items-center gap-2 rounded-full border border-gold/50 bg-white/70 px-4 py-2 text-sm font-bold text-[#76520a] shadow-sm">

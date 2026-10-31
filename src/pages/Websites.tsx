@@ -76,7 +76,7 @@ export default function WebsitesPage() {
                   >
                     {s.img && <img src={s?.img} alt={s.title} className="absolute inset-0 h-full w-full object-cover" />
                     }
-                    <BrowserMockup variant={s.variant} url={s.url} className="transition-transform duration-500 group-hover:scale-[1.02]" />
+                   <BrowserMockup variant={s.variant} url={s.url} className="transition-transform duration-500 group-hover:scale-[1.02]" />
                     <img src={s.img} alt={s.title} className="absolute inset-0 h-full w-full object-cover" />
                     <span className="absolute inset-0 grid place-items-center rounded-xl bg-night/0 opacity-0 transition-all duration-300 group-hover:bg-night/45 group-hover:opacity-100">
                       <span className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-bold text-ink shadow-xl">

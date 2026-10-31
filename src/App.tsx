@@ -9,6 +9,7 @@ import WebsitesPage from "./pages/Websites";
 import PosterPage from "./pages/PosterPage";
 import CreatorsPage from "./pages/Creators";
 import FeedbackPage from "./pages/Feedback";
+import StudentsPage from "./pages/StudentsPage";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/gallery/posters" element={<PosterPage />} />
           <Route path="/creators" element={<CreatorsPage />} />
           <Route path="/feedback" element={<FeedbackPage />} />
+          <Route path="/family" element ={<StudentsPage/>}/>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

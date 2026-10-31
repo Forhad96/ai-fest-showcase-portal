@@ -315,7 +315,7 @@ export default function Home() {
             <Reveal className="lg:row-span-2">
               <Link to="/gallery/photos" className="group flex h-full flex-col overflow-hidden rounded-2xl border border-ink/10 bg-white shadow-lg transition-all hover:shadow-2xl hover:-translate-y-1">
                 <div className="relative p-5 pb-0">
-                  <BeforeAfter src={IMG.portraitMan} alt="এআই ফটো এনহ্যান্সমেন্ট" ratio="aspect-[16/11]" />
+                  <BeforeAfter src={IMG.portraitMan} alt="এআই ফটো এনহ্যান্সমেন্ট" ratio="aspect-[16/10]" />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex items-center justify-between">
@@ -334,7 +334,7 @@ export default function Home() {
             <Reveal delay={100}>
               <Link to="/gallery/websites" className="group flex gap-5 overflow-hidden rounded-2xl border border-ink/10 bg-white p-5 shadow-lg transition-all hover:shadow-2xl hover:-translate-y-1 items-center">
                 <div className="w-2/5 shrink-0 transition-transform duration-500 group-hover:scale-[1.04] group-hover:-rotate-1">
-                  <BrowserMockup variant="portfolio" url="https://rakib-dyd.github.io" />
+                  <BrowserMockup variant="portfolio" url="https://forhad-one.vercel.app" />
                 </div>
                 <div>
                   <div className="flex items-center gap-3">

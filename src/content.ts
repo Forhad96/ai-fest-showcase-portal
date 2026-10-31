@@ -1,5 +1,5 @@
 import hero2040 from './assets/hero2040.jpg';
-import portraitMan from './assets/portrait-man.jpg';
+import portraitMan from './assets/Professional Green-Backdrop Portrait.png';
 import portraitWoman from './assets/portrait-woman.jpg';
 import portraitElder from './assets/portrait-elder.jpg';
 import rickshaw2040 from './assets/rickshaw2040.jpg';
@@ -39,6 +39,7 @@ export const SITE = {
     gallery: 'ক্রিয়েশন গ্যালারি',
     creators: 'ক্রিয়েটর হাব',
     feedback: 'মতামত দিন',
+    family: 'ক্লাস পরিবার'
   },
   home: {
     trainingLabel: 'যুব উন্নয়ন অধিদপ্তর • বেসিক এআই ট্রেনিং • বান্দরবান',
@@ -274,13 +275,13 @@ export type SiteWork = {
   id: string;
   title: string;
   student: string;
-  category: 'পোর্টফোলিও' | 'বিজনেস' | 'ব্লগ ও নিউজ' | 'শিক্ষা';
+  category: 'পোর্টফোলিও' | 'বিজনেস' | 'ব্লগ ও নিউজ' | 'শিক্ষা' | "সোশ্যাল / নন-প্রফিট" | 'ই-লার্নিং' | 'এজুকেশন ও গেম' | 'সোশ্যাল / সার্ভিস';
   desc: string;
   url: string;
   tech: string[];
   variant?
-  : 'portfolio' | 'restaurant' | 'news' | 'shop' | 'travel' | 'school'| 'blog' | 'business'| 'ecommerce';
-  img?:string
+  : 'portfolio' | 'restaurant' | 'news' | 'shop' | 'travel' | 'school' | 'blog' | 'business' | 'ecommerce' | "nonprofit" | "e-learning" | 'game';
+  img?: string
 };
 export const SITES: SiteWork[] = [
   {
@@ -290,42 +291,58 @@ export const SITES: SiteWork[] = [
     category: 'বিজনেস',
     desc: 'বিজনেস ও ইকমার্স ওয়েবসাইট — প্রোডাক্ট ছবি এআই-এনহ্যান্সড।',
     url: 'https://alimamu.com',
-    tech: ['HTML', 'CSS',"laravel", 'ChatGPT', 'Tailwind', 'Copilot'],
+    tech: ['HTML', 'CSS', "laravel", 'ChatGPT', 'Tailwind', 'Copilot'],
     variant: 'shop',
-    img:'https://i.postimg.cc/wjRDM8ZC/Alimamu-Responsive-Ecommerce-Showcase.png'
+    img: 'https://i.postimg.cc/wjRDM8ZC/Alimamu-Responsive-Ecommerce-Showcase.png'
   },
   {
     id: 'w2',
-    title: 'স্বাদদেশ — রেস্টুরেন্ট ল্যান্ডিং',
+    title: 'আলো দিশা ফাউন্ডেশন — অলাভজনক অর্গানাইজেশন ল্যান্ডিং',
     student: 'মেহেদী হাসান',
-    category: 'বিজনেস',
-    desc: 'স্থানীয় রেস্টুরেন্টের মেনু, অর্ডার ও লোকেশন — এআই-লিখা কপি আর লোভনীয় ফুড ফটোগ্রাফিসহ।',
-    url: 'https://swaddesh-dyd.github.io',
+    category: 'সোশ্যাল / নন-প্রফিট',
+    desc: 'ফাউন্ডেশনের কাজ, স্বেচ্ছাসেবক ও ডোনেশন — মিশন-ভিত্তিক ল্যান্ডিং পেজ।',
+    url: 'https://alordishafoundation.org/',
     tech: ['HTML', 'Tailwind', 'ChatGPT'],
-    variant: 'restaurant',
+    variant: 'nonprofit',
+    img: 'https://i.postimg.cc/7LFSmVhj/alor-disa.png'
   },
+
   {
     id: 'w3',
-    title: 'সবুজবাংলা নিউজ',
-    student: 'তানভীর ইসলাম',
-    category: 'ব্লগ ও নিউজ',
-    desc: 'প্রযুক্তি ও কৃষিবিষয়ক ব্লগ-নিউজ লেআউট; হেডলাইন ও সামারি লেখা হয়েছে এআই দিয়ে।',
-    url: 'https://sobujbangla-dyd.github.io',
-    tech: ['HTML', 'CSS Grid', 'Gemini'],
-    variant: 'news',
+    title: 'Shiko - Learn.Practice.Grow',
+    student: 'NibirChakma',
+    category: 'ই-লার্নিং',
+    desc: 'Shiko একটি আধুনিক অনলাইন লার্নিং প্ল্যাটফর্ম, যেখানে YouTube Monetization, Automation, AI Tools ও Digital Skills শেখার মাধ্যমে নিজের দক্ষতা বাড়িয়ে গড়ে তুলতে পারবেন সম্ভাবনাময় ক্যারিয়ার। ',
+    url: 'https://www.shiko.courses/',
+    tech: ['HTML', 'CSS', 'Javascript'],
+    variant: 'e-learning',
+    img: 'https://i.postimg.cc/DfMnDMFY/shikho.jpg'
+
   },
   {
     id: 'w4',
-    title: 'নন্দিনী ফ্যাশন হাউস',
-    student: 'নুসরাত জাহান',
-    category: 'বিজনেস',
-    desc: 'জামদানি ও দেশি পোশাকের অনলাইন শপ প্রোটোটাইপ — প্রোডাক্ট ছবি এআই-এনহ্যান্সড।',
-    url: 'https://nandini-dyd.github.io',
-    tech: ['HTML', 'Bootstrap', 'Remini'],
-    variant: 'shop',
+    title: 'English Game for Kids',
+    student: 'সালমা আক্তার',
+    category: 'এজুকেশন ও গেম',
+    desc: 'ছোট বন্ধুদের জন্য ইংরেজি শেখার মজার খেলার ওয়েবসাইট',
+    url: 'https://english-game-kids-dyd.github.io',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Gemini'],
+    variant: 'game',
+    img: 'https://i.postimg.cc/dQrcHtHp/salma-english-shiki.png'
   },
   {
     id: 'w5',
+    title: 'সাকসেস আইটি পার্ক — ১০০% অনলাইন আইটি প্রশিক্ষণে তরুণদের ক্যারিয়ার',
+    student: 'মোঃ ইমরানুল হক',
+    category: 'সোশ্যাল / সার্ভিস',
+    desc: 'সাকসেস আইটি ইনস্টিটিউট এর কাজ, সার্ভিস ও তরুণদের কর্মসংস্থান— এআই-লিখা কপিসহ একটি পরিষ্কার মিশন-ভিত্তিক ল্যান্ডিং পেজ।',
+    url: 'https://banglacodes.app/p/success-it-park-100-online-based-it-inst-wbawxfng/',
+    tech: ['HTML', 'Tailwind', 'ChatGPT'],
+    variant: 'e-learning',
+    img: 'https://i.postimg.cc/CMGLZNgR/success-it.jpg'
+  },
+  {
+    id: 'w6',
     title: 'ভ্রমণসঙ্গী — ট্যুর গাইড',
     student: 'ফারিয়া আক্তার',
     category: 'ব্লগ ও নিউজ',
@@ -333,9 +350,10 @@ export const SITES: SiteWork[] = [
     url: 'https://bhromon-dyd.github.io',
     tech: ['HTML', 'CSS', 'Claude'],
     variant: 'travel',
+
   },
   {
-    id: 'w6',
+    id: 'w7',
     title: 'আলোর পাঠশালা',
     student: 'সাব্বির আহমেদ',
     category: 'শিক্ষা',

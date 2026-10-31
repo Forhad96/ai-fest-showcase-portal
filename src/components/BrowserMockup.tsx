@@ -21,7 +21,7 @@ function Body({ variant }: { variant: Variant }) {
           <div className="mt-2 flex items-center gap-3">
             <div className="h-10 w-10 rounded-full bg-gradient-to-br from-[#17b36a] to-[#f2b63c] ring-2 ring-[#17b36a]/50" />
             <div className="space-y-1.5">
-              <p className="text-[10px] font-bold text-white leading-none">হাই, আমি রাকিব 👋</p>
+              <p className="text-[10px] font-bold text-white leading-none">হাই, আমি ফরহাদ 👋</p>
               <Bar w="w-24" c="bg-[#4ade9b]/60" />
               <Bar w="w-16" c="bg-white/20" />
             </div>

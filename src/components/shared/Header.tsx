@@ -8,6 +8,7 @@ import {
   LayoutGrid,
   Menu,
   Star,
+  User,
   Users,
   X,
 } from "lucide-react";
@@ -18,6 +19,7 @@ const NAV = [
   { to: "/feedbackbox", label: SITE.navigation.feedbackBox, icon: Inbox, end: false },
   { to: "/gallery", label: SITE.navigation.gallery, icon: LayoutGrid, end: false },
   { to: "/creators", label: SITE.navigation.creators, icon: Users, end: false },
+  {  to: "/family" ,label: SITE.navigation.family, icon:User ,end:false}
 ];
 
 function Logo() {
